@@ -1,9 +1,11 @@
 # Project: electroScribe
 
-> Deployed Link: Coming Soon
-> GitHub Repo: https://github.com/waqar-habib/electroScribe
+- Deployed Link: Coming Soon
+- GitHub Repo: https://github.com/waqar-habib/electroScribe
 
-> electroScribe is an EMR (Electronic Medical Records) management system, that gives the providers the capability to log in and view a current patient's medical record, including the patient's demographics, the conditions they have, the medications they are currently on, their allergies etc. The provider/admin can also create or delete a patient as needed. 
+## Description
+
+- electroScribe is an EMR (Electronic Medical Records) management system, that gives the providers the capability to log in and view a current patient's medical record, including the patient's demographics, the conditions they have, the medications they are currently on, their allergies etc. The provider/admin can also create or delete a patient as needed. 
 
 ## Developers
 
