@@ -31,6 +31,10 @@
     - Architecture: TBD
 - Database: mySQL 
 
-## Preview
+## Project board
 
-- Coming Soon
+- Automated kanban board: https://github.com/waqar-habib/electroScribe/projects/1
+
+## Database Diagram
+
+- https://dbdiagram.io/d/5d2ff45bced98361d6dcc450 (Did my best to make the right association, may need revision and assistance)
