@@ -20,7 +20,7 @@
   - LinkedIn: https://www.linkedin.com/in/andybayles/
   
 ### Fatih Ersoy: TBD
-  - Portfolio: 
+  - Portfolio: https://fersoy.github.io/FatihErsoy_Portfolio/
   - Github: https://github.com/fersoy
   - LinkedIn: https://www.linkedin.com/in/fatih-ersoy-0947a4b1/
 
