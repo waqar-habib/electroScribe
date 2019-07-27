@@ -1,6 +1,6 @@
 # Project: electroScribe
 
-- Deployed Link: Coming Soon
+- Deployed Link: https://electroscribe.herokuapp.com/
 - GitHub Repo: https://github.com/waqar-habib/electroScribe
 
 ## Description
