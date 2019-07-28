@@ -1,30 +1,24 @@
-import React from 'react';
-import { Fragment } from 'react';
-import {
-  CssBaseline,
-  withStyles,
-} from '@material-ui/core';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Navbar from './components/layout/Navbar';
+import Home from './components/pages/Home';
+import Staff from './components/pages/Staff';
+import './App.css';
 
-import AppHeader from './components/AppHeader';
-import Home from './pages/Home';
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <Navbar />
+          <div className="container">
+            <Route path="/" exact={true} component={Home} />
+            <Route path="/staff" exact={true} component={Staff} />
+          </div>
+        </div>
+      </Router>
+    )
+  }
+}
 
-const styles = theme => ({
-  main: {
-    padding: 3 * theme.spacing.unit,
-    [theme.breakpoints.down('xs')]: {
-      padding: 2 * theme.spacing.unit,
-    },
-  },
-});
-
-const App = ({ classes }) => (
-  <Fragment>
-    <CssBaseline />
-    <AppHeader />
-    <main className={classes.main}>
-      <Home />
-    </main>
-  </Fragment>
-);
-
-export default withStyles(styles)(App);
+export default App;
