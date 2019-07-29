@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { withAuth } from '@okta/okta-react';
 
 class Staff extends Component {
   // Setting the initial state for user name and user email
