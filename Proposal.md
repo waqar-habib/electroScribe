@@ -39,4 +39,4 @@
 
 ## Database Diagram
 
-- https://dbdiagram.io/d/5d2ff45bced98361d6dcc450 (Did my best to make the right association, may need revision and assistance)
+- New Diagram (07-29-2019): https://dbdiagram.io/d/5d3e6ff9ced98361d6dd152d
