@@ -1,37 +1,68 @@
-# Project: electroScribe
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-- Deployed Link: https://electroscribe.herokuapp.com/
-- GitHub Repo: https://github.com/waqar-habib/electroScribe
+## Available Scripts
 
-## Description
+In the project directory, you can run:
 
-- electroScribe is an EMR (Electronic Medical Records) management system, that gives the providers the capability to log in and view a current patient's medical record, including the patient's demographics, the conditions they have, the medications they are currently on, their allergies etc. The provider/admin can also create or delete a patient as needed. 
+### `npm start`
 
-## Developers
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### Waqar Habib: Front + Back-end Developer
-  - Portfolio: http://www.waqarhabib.dev
-  - Github: https://github.com/waqar-habib
-  - LinkedIn: https://www.linkedin.com/in/waqarhabib94/
-  
-### Andrew Bayles: TBD
-  - Portfolio: http://www.baylesdev.com/
-  - Github: https://github.com/andrewbayles/
-  - LinkedIn: https://www.linkedin.com/in/andybayles/
-  
-### Fatih Ersoy: TBD
-  - Portfolio: https://fersoy.github.io/FatihErsoy_Portfolio/
-  - Github: https://github.com/fersoy
-  - LinkedIn: https://www.linkedin.com/in/fatih-ersoy-0947a4b1/
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-## Techstack
+### `npm test`
 
-- Front-End: React.js | Reactstrap | JavaScript/JSX 
-- Back-End Language: JavaScript 
-    - Server-side Frameworks: Node.js | Express.js
-    - NPM Packages: LoopBack ORM | 
-- Database: mySQL 
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Preview
+### `npm run build`
 
-- Coming Soon
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

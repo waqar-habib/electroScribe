@@ -22,6 +22,10 @@ h1 {
   margin-bottom: 10px;
   color: #d1d1d1;
   transition: color 0.2s;
+  border: 2px solid grey;
+  text-align: center;
+  box-shadow: 0 2px 2px 0;
+  
 }
 
 .bm-item:hover {
@@ -43,8 +47,9 @@ h1 {
 }
 
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
+  height: 14px;
+  width: 14px;
+  margin-right: 40px;
 }
 
 .bm-cross {
@@ -53,8 +58,9 @@ h1 {
 
 .bm-menu {
   background: #373a47;
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
+  padding: 4.5em 1.5em 0;
+  font-size: 1.05em;
+  margin-right: 40px;
 }
 
 .bm-morph-shape {
@@ -63,8 +69,12 @@ h1 {
 
 .bm-item-list {
   color: #b8b7ad;
+  
 }
 
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+a:link {
+  text-decoration: none;
 }

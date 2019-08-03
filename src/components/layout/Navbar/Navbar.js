@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+
+
+
 class Navbar extends Component {
     render() {
         return (
             <Router>
 
 
-                <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+                <nav className="navbar navbar-expand-sm navbar-primary bg-primary mb-4">
                     <div className="container">
 
-                        <Link className="navbar-brand" to="/">
+                        <Link className="navbar-brand" style={{ color: "white" }} to="/">
                             electroScribe
           </Link>
 
@@ -25,12 +29,12 @@ class Navbar extends Component {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/">
+                                    <Link className="nav-link" style={{ color: "white" }} to="/">
                                         Home
                 </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/staff">
+                                    <Link className="nav-link" style={{ color: "white" }} to="/staff">
                                         Staff
                 </Link>
 
@@ -39,7 +43,7 @@ class Navbar extends Component {
                         </div>
                     </div>
                 </nav>
-            </Router>
+            </Router >
         );
     }
 }
