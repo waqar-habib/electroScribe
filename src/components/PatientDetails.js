@@ -47,6 +47,9 @@ class PatientDetails extends Component {
                         </div>
                         <div className="card-action">
                         <Link to="/chart">Chart</Link>
+                        <Link to={`/patients/edit/${this.state.details.pt_uuid}`}>Edit</Link>
+                        <button class="btn waves-effect waves-light red" type="delete" name="action">Delete
+                        </button>
                         </div>
                     </div>
                     </div>
