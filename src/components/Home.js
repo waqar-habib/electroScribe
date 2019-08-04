@@ -2,8 +2,8 @@ import React from 'react';
 
 const Home = () => (
   <div>
-    <h1>Home</h1>
-    <p>We can put any static data here</p>
+    <h1>Welcome to electroScribe</h1>
+    <h4>The Electronic Medical Record management app of the future!</h4>
   </div>
 )
 

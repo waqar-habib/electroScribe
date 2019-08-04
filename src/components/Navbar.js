@@ -13,7 +13,7 @@ class Navbar extends Component {
                         <li><Link to="/"><i className="fa fa-home"></i> Home</Link></li>
                     </ul>
                     <ul className="sidenav" id="main-menu">
-                        <li><Link to="/patients/add"><i className="fa fa-users"></i> Patients</Link></li>
+                        <li><Link to="/patients/"><i className="fa fa-users"></i> Patients</Link></li>
                         <li><Link to="/dashboard"><i className="fa fa-h-square"></i> Dashboard</Link></li>
                         <li><Link to="/account"><i className="fa fa-address-card"></i> Account</Link></li>
                         <li><Link to="/messages"><i className="fa fa-envelope-o"></i> Messages</Link></li>
