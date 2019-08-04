@@ -36,7 +36,7 @@ class Patients extends Component {
         // Store the patients state object into a const and map through the array
         const patientItems = this.state.patients.map((patient, i) => {
             return(
-                <PatientItem key={patient.id} item={patient}/>
+                <PatientItem key={patient.pt_uuid} item={patient}/>
             )
         })
         return (

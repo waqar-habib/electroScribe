@@ -27,6 +27,15 @@ class PatientDetails extends Component {
             .catch(err => console.log(err))
     }
 
+    // Creating a new onDelete method to execute when button in Ln 52 is clicked
+    onDelete(){
+        let pt_uuid = this.state.details.pt_uuid;
+        axios.delete(`http://[::1]:3000/patients/${pt_uuid}`)
+            .then(response => {
+                this.props.history.push('/patients')
+            }).catch(err => console.log(err))
+    }
+
     render(){
         return(
             <div>
@@ -48,7 +57,8 @@ class PatientDetails extends Component {
                         <div className="card-action">
                         <Link to="/chart">Chart</Link>
                         <Link to={`/patients/edit/${this.state.details.pt_uuid}`}>Edit</Link>
-                        <button class="btn waves-effect waves-light red" type="delete" name="action">Delete
+                        {/*Ln 52: Adding an onClick prop to the button tag so we can bind the click to the click handler above*/}
+                        <button onClick={this.onDelete.bind(this)} className="btn waves-effect waves-light red" type="delete" name="action">Delete
                         </button>
                         </div>
                     </div>
