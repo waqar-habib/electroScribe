@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import PatientItem from './PatientItem';
 
 class Patients extends Component {
     constructor() {
@@ -22,16 +23,28 @@ class Patients extends Component {
     getPatients() {
         axios.get('http://[::1]:3000/patients')
             .then(response => {
-                // Since the API is set up to retrieve individiual patients as objects you can drill into the object and chain more things on the response.data to filter out the response
-                console.log(response.data);
+                // Setting the patients state object to the response
+                this.setState({patients: response.data}, () => {
+                    //console.log(this.state);
+                })
             })
+            .catch(err => console.log(err))
     }
 
     // Render is a lifecyle method
     render() {
+        // Store the patients state object into a const and map through the array
+        const patientItems = this.state.patients.map((patient, i) => {
+            return(
+                <PatientItem key={patient.id} item={patient}/>
+            )
+        })
         return (
             <div>
                 <h1>Patients</h1>
+                <ul className="collection">
+                    {patientItems}
+                </ul>
                 <div className="fixed-action-button">
                     <Link to="/patients/add" className="btn-floating btn-large red">
                         <i className="fa fa-plus"></i>
