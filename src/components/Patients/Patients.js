@@ -24,7 +24,7 @@ class Patients extends Component {
         axios.get('http://[::1]:3000/patients')
             .then(response => {
                 // Setting the patients state object to the response
-                this.setState({patients: response.data}, () => {
+                this.setState({ patients: response.data }, () => {
                     //console.log(this.state);
                 })
             })
@@ -35,8 +35,8 @@ class Patients extends Component {
     render() {
         // Store the patients state object into a const and map through the array
         const patientItems = this.state.patients.map((patient, i) => {
-            return(
-                <PatientItem key={patient.pt_uuid} item={patient}/>
+            return (
+                <PatientItem key={patient.id} item={patient} />
             )
         })
         return (
@@ -45,9 +45,10 @@ class Patients extends Component {
                 <ul className="collection">
                     {patientItems}
                 </ul>
+                <hr />
                 <div className="fixed-action-button">
                     <Link to="/patients/add" className="btn-floating btn-large red">
-                        <i className="fa fa-plus"></i>
+                        <button type="button" class="btn btn-outline-primary"><i className="fa fa-plus"> New Patients</i> </button>
                     </Link>
                 </div>
             </div>
