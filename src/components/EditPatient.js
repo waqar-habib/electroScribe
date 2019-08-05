@@ -44,7 +44,7 @@ class EditPatient extends Component {
 
     editPatient(newPatient){
         //console.log(newPatient)
-        // Making a POST request thru axios
+        // Making a PUT request thru axios
         axios.request({
             method: 'PUT',
             url: `http://[::1]:3000/patients/${this.state.pt_uuid}`,
