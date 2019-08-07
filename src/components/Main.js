@@ -5,6 +5,9 @@ import Home from './Home';
 import PatientDetails from './PatientDetails';
 import AddPatient from './AddPatients';
 import EditPatient from './EditPatient';
+import Dashboard from './pages/Dashboard';
+import Account from './pages/Account';
+import MedRecords from './pages/Medical-records';
 
 const Main = () => (
     <main>
@@ -15,6 +18,9 @@ const Main = () => (
             <Route exact path='/patients/add' component={AddPatient} />
             <Route exact path='/patients/edit/:id' component={EditPatient} />
             <Route exact path='/patients/:id' component={PatientDetails} />
+            <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/account' component={Account} />
+            <Route exact path='/medical-records' component={MedRecords} />
         </Switch>
     </main>
 )
