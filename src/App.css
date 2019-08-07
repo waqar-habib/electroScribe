@@ -1,3 +1,217 @@
+html,
 body {
-  font-family: Roboto, sans-serif;
+  margin: 0;
+  font-family: Roboto;
+}
+h1 {
+  font-family: Roboto;
+}
+#App {
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+#page-wrap {
+  text-align: center;
+  overflow: auto;
+}
+
+.bm-item {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: white;
+  transition: color 0.2s;
+  border: 3px solid rgb(226, 14, 14);
+  text-align: center;
+  box-shadow: 0 1px 1px 0;
+
+}
+
+.bm-item:hover {
+  color: rgb(128, 63, 63);
+}
+
+.bm-burger-button {
+  position: absolute;
+  width: 25px;
+  height: 18px;
+  left: 50px;
+  top: 20px;
+  margin-left: 40px;
+ 
+}
+
+.bm-burger-bars {
+  background: white;
+  position: relative;
+
+}
+
+.bm-cross-button {
+  height: 14px;
+  width: 14px;
+  margin-right: 85px;
+
+}
+
+.bm-cross {
+  background: white;
+}
+
+.bm-menu {
+  background: #7fb2f0;
+  padding: 4.5em 1.5em 0;
+  font-size: 1.05em;
+  margin-right: 80px;
+  margin-top: -24px;
+
+}
+
+.bm-morph-shape {
+  fill: #5a617c;
+
+}
+
+.bm-item-list {
+  color: rgb(153, 22, 22);
+  
+}
+
+.bm-overlay {
+  background: rgb(112, 57, 57);
+  margin-top: -25px;
+
+}
+a:link {
+  text-decoration: none;
+}
+
+.brand-logo {
+  font-weight: bold;
+  
+
+}
+.nav-link{
+  font-weight: bold;
+margin-right: -100px;
+}
+.fa-plus{
+  font-weight: bold;
+}
+/* Add Patients part */
+.helper-text{
+  font-size: x-small;
+  color: rgb(94, 89, 48);
+}
+
+.form-style-7{
+	max-width:400px;
+	margin:50px auto;
+	background:#fff;
+	border-radius:2px;
+	padding:20px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style-7 h1{
+	display: block;
+	text-align: center;
+	padding: 0;
+	margin: 0px 0px 20px 0px;
+	color: #5C5C5C;
+	font-size:x-large;
+}
+.form-style-7 ul{
+	list-style:none;
+	padding:0;
+	margin:0;	
+}
+.form-style-7 li{
+	display: block;
+	padding: 9px;
+	border:1px solid #DDDDDD;
+	margin-bottom: 30px;
+	border-radius: 3px;
+}
+.form-style-7 li:last-child{
+	border:none;
+	margin-bottom: 0px;
+	text-align: center;
+}
+.form-style-7 li > label{
+	display: block;
+	float: left;
+	margin-top: -19px;
+	background: #FFFFFF;
+	height: 14px;
+	padding: 2px 5px 2px 5px;
+	color: #B9B9B9;
+	font-size: 14px;
+	overflow: hidden;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.form-style-7 input[type="text"],
+.form-style-7 input[type="date"],
+.form-style-7 input[type="datetime"],
+.form-style-7 input[type="email"],
+.form-style-7 input[type="number"],
+.form-style-7 input[type="search"],
+.form-style-7 input[type="time"],
+.form-style-7 input[type="url"],
+.form-style-7 input[type="password"],
+.form-style-7 textarea,
+.form-style-7 select 
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	display: block;
+	outline: none;
+	border: none;
+	height: 25px;
+	line-height: 25px;
+	font-size: 16px;
+	padding: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style-7 input[type="text"]:focus,
+.form-style-7 input[type="date"]:focus,
+.form-style-7 input[type="datetime"]:focus,
+.form-style-7 input[type="email"]:focus,
+.form-style-7 input[type="number"]:focus,
+.form-style-7 input[type="search"]:focus,
+.form-style-7 input[type="time"]:focus,
+.form-style-7 input[type="url"]:focus,
+.form-style-7 input[type="password"]:focus,
+.form-style-7 textarea:focus,
+.form-style-7 select:focus 
+{
+}
+.form-style-7 li > span{
+	background: #F3F3F3;
+	display: block;
+	padding: 3px;
+	margin: 0 -9px -9px -9px;
+	text-align: center;
+	color: #C0C0C0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.form-style-7 textarea{
+	resize:none;
+}
+.form-style-7 input[type="submit"],
+.form-style-7 input[type="button"]{
+	background: #2471FF;
+	border: none;
+	padding: 10px 20px 10px 20px;
+	border-bottom: 3px solid #5994FF;
+	border-radius: 3px;
+	color: #D2E2FF;
+}
+.form-style-7 input[type="submit"]:hover,
+.form-style-7 input[type="button"]:hover{
+	background: #6B9FFF;
+	color:#fff;
 }
