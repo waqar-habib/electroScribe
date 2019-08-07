@@ -1,10 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Patients from './Patients';
-import Home from './Home';
-import PatientDetails from './PatientDetails';
-import AddPatient from './AddPatients';
-import EditPatient from './EditPatient';
+import Patients from '../Patients/Patients';
+import Home from './Home/Home';
+import PatientDetails from '../Patients/PatientDetails';
+import AddPatient from '../Patients/AddPatients';
+import EditPatient from '../Patients/EditPatient';
 
 const Main = () => (
     <main>
