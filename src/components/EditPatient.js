@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+// If the 422 error doesnt resolve, remove the edit functionality
 class EditPatient extends Component {
     constructor(props){
         super(props);
