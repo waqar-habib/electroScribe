@@ -17,20 +17,20 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {patients} from '../models';
-import {patientsRepository} from '../repositories';
+import {Patients} from '../models';
+import {PatientsRepository} from '../repositories';
 
-export class patientsController {
+export class PatientsController {
   constructor(
-    @repository(patientsRepository)
-    public patientsRepository : patientsRepository,
+    @repository(PatientsRepository)
+    public PatientsRepository : PatientsRepository,
   ) {}
 
-  @post('/patients', {
+  @post('/Patients', {
     responses: {
       '200': {
-        description: 'patients model instance',
-        content: {'application/json': {schema: getModelSchemaRef(patients)}},
+        description: 'Patients model instance',
+        content: {'application/json': {schema: getModelSchemaRef(Patients)}},
       },
     },
   })
@@ -38,51 +38,51 @@ export class patientsController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(patients, {exclude: ['pt_uuid']}),
+          schema: getModelSchemaRef(Patients, {exclude: ['pt_uuid']}),
         },
       },
     })
-    patients: Omit<patients, 'pt_uuid'>,
-  ): Promise<patients> {
-    return this.patientsRepository.create(patients);
+    Patients: Omit<Patients, 'pt_uuid'>,
+  ): Promise<Patients> {
+    return this.PatientsRepository.create(Patients);
   }
 
-  @get('/patients/count', {
+  @get('/Patients/count', {
     responses: {
       '200': {
-        description: 'patients model count',
+        description: 'Patients model count',
         content: {'application/json': {schema: CountSchema}},
       },
     },
   })
   async count(
-    @param.query.object('where', getWhereSchemaFor(patients)) where?: Where<patients>,
+    @param.query.object('where', getWhereSchemaFor(Patients)) where?: Where<Patients>,
   ): Promise<Count> {
-    return this.patientsRepository.count(where);
+    return this.PatientsRepository.count(where);
   }
 
-  @get('/patients', {
+  @get('/Patients', {
     responses: {
       '200': {
-        description: 'Array of patients model instances',
+        description: 'Array of Patients model instances',
         content: {
           'application/json': {
-            schema: {type: 'array', items: getModelSchemaRef(patients)},
+            schema: {type: 'array', items: getModelSchemaRef(Patients)},
           },
         },
       },
     },
   })
   async find(
-    @param.query.object('filter', getFilterSchemaFor(patients)) filter?: Filter<patients>,
-  ): Promise<patients[]> {
-    return this.patientsRepository.find(filter);
+    @param.query.object('filter', getFilterSchemaFor(Patients)) filter?: Filter<Patients>,
+  ): Promise<Patients[]> {
+    return this.PatientsRepository.find(filter);
   }
 
-  @patch('/patients', {
+  @patch('/Patients', {
     responses: {
       '200': {
-        description: 'patients PATCH success count',
+        description: 'Patients PATCH success count',
         content: {'application/json': {schema: CountSchema}},
       },
     },
@@ -91,32 +91,32 @@ export class patientsController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(patients, {partial: true}),
+          schema: getModelSchemaRef(Patients, {partial: true}),
         },
       },
     })
-    patients: patients,
-    @param.query.object('where', getWhereSchemaFor(patients)) where?: Where<patients>,
+    Patients: Patients,
+    @param.query.object('where', getWhereSchemaFor(Patients)) where?: Where<Patients>,
   ): Promise<Count> {
-    return this.patientsRepository.updateAll(patients, where);
+    return this.PatientsRepository.updateAll(Patients, where);
   }
 
-  @get('/patients/{id}', {
+  @get('/Patients/{id}', {
     responses: {
       '200': {
-        description: 'patients model instance',
-        content: {'application/json': {schema: getModelSchemaRef(patients)}},
+        description: 'Patients model instance',
+        content: {'application/json': {schema: getModelSchemaRef(Patients)}},
       },
     },
   })
-  async findById(@param.path.string('id') id: string): Promise<patients> {
-    return this.patientsRepository.findById(id);
+  async findById(@param.path.string('id') id: string): Promise<Patients> {
+    return this.PatientsRepository.findById(id);
   }
 
-  @patch('/patients/{id}', {
+  @patch('/Patients/{id}', {
     responses: {
       '204': {
-        description: 'patients PATCH success',
+        description: 'Patients PATCH success',
       },
     },
   })
@@ -125,37 +125,37 @@ export class patientsController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(patients, {partial: true}),
+          schema: getModelSchemaRef(Patients, {partial: true}),
         },
       },
     })
-    patients: patients,
+    Patients: Patients,
   ): Promise<void> {
-    await this.patientsRepository.updateById(id, patients);
+    await this.PatientsRepository.updateById(id, Patients);
   }
 
-  @put('/patients/{id}', {
+  @put('/Patients/{id}', {
     responses: {
       '204': {
-        description: 'patients PUT success',
+        description: 'Patients PUT success',
       },
     },
   })
   async replaceById(
     @param.path.string('id') id: string,
-    @requestBody() patients: patients,
+    @requestBody() Patients: Patients,
   ): Promise<void> {
-    await this.patientsRepository.replaceById(id, patients);
+    await this.PatientsRepository.replaceById(id, Patients);
   }
 
-  @del('/patients/{id}', {
+  @del('/Patients/{id}', {
     responses: {
       '204': {
-        description: 'patients DELETE success',
+        description: 'Patients DELETE success',
       },
     },
   })
   async deleteById(@param.path.string('id') id: string): Promise<void> {
-    await this.patientsRepository.deleteById(id);
+    await this.PatientsRepository.deleteById(id);
   }
 }

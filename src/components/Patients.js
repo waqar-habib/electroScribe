@@ -21,7 +21,7 @@ class Patients extends Component {
 
     // Create a new method getPatients to make an axios request
     getPatients() {
-        axios.get('http://[::1]:3000/patients')
+        axios.get('http://[::1]:3000/Patients')
             .then(response => {
                 // Setting the patients state object to the response
                 this.setState({patients: response.data}, () => {

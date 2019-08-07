@@ -17,20 +17,20 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {conditions} from '../models';
-import {conditionsRepository} from '../repositories';
+import {Conditions} from '../models';
+import {ConditionsRepository} from '../repositories';
 
-export class conditionsController {
+export class ConditionsController {
   constructor(
-    @repository(conditionsRepository)
-    public conditionsRepository : conditionsRepository,
+    @repository(ConditionsRepository)
+    public ConditionsRepository : ConditionsRepository,
   ) {}
 
-  @post('/conditions', {
+  @post('/Conditions', {
     responses: {
       '200': {
-        description: 'conditions model instance',
-        content: {'application/json': {schema: getModelSchemaRef(conditions)}},
+        description: 'Conditions model instance',
+        content: {'application/json': {schema: getModelSchemaRef(Conditions)}},
       },
     },
   })
@@ -38,51 +38,51 @@ export class conditionsController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(conditions, {exclude: ['icd_10']}),
+          schema: getModelSchemaRef(Conditions, {exclude: ['icd_10']}),
         },
       },
     })
-    conditions: Omit<conditions, 'icd_10'>,
-  ): Promise<conditions> {
-    return this.conditionsRepository.create(conditions);
+    Conditions: Omit<Conditions, 'icd_10'>,
+  ): Promise<Conditions> {
+    return this.ConditionsRepository.create(Conditions);
   }
 
-  @get('/conditions/count', {
+  @get('/Conditions/count', {
     responses: {
       '200': {
-        description: 'conditions model count',
+        description: 'Conditions model count',
         content: {'application/json': {schema: CountSchema}},
       },
     },
   })
   async count(
-    @param.query.object('where', getWhereSchemaFor(conditions)) where?: Where<conditions>,
+    @param.query.object('where', getWhereSchemaFor(Conditions)) where?: Where<Conditions>,
   ): Promise<Count> {
-    return this.conditionsRepository.count(where);
+    return this.ConditionsRepository.count(where);
   }
 
-  @get('/conditions', {
+  @get('/Conditions', {
     responses: {
       '200': {
-        description: 'Array of conditions model instances',
+        description: 'Array of Conditions model instances',
         content: {
           'application/json': {
-            schema: {type: 'array', items: getModelSchemaRef(conditions)},
+            schema: {type: 'array', items: getModelSchemaRef(Conditions)},
           },
         },
       },
     },
   })
   async find(
-    @param.query.object('filter', getFilterSchemaFor(conditions)) filter?: Filter<conditions>,
-  ): Promise<conditions[]> {
-    return this.conditionsRepository.find(filter);
+    @param.query.object('filter', getFilterSchemaFor(Conditions)) filter?: Filter<Conditions>,
+  ): Promise<Conditions[]> {
+    return this.ConditionsRepository.find(filter);
   }
 
-  @patch('/conditions', {
+  @patch('/Conditions', {
     responses: {
       '200': {
-        description: 'conditions PATCH success count',
+        description: 'Conditions PATCH success count',
         content: {'application/json': {schema: CountSchema}},
       },
     },
@@ -91,32 +91,32 @@ export class conditionsController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(conditions, {partial: true}),
+          schema: getModelSchemaRef(Conditions, {partial: true}),
         },
       },
     })
-    conditions: conditions,
-    @param.query.object('where', getWhereSchemaFor(conditions)) where?: Where<conditions>,
+    Conditions: Conditions,
+    @param.query.object('where', getWhereSchemaFor(Conditions)) where?: Where<Conditions>,
   ): Promise<Count> {
-    return this.conditionsRepository.updateAll(conditions, where);
+    return this.ConditionsRepository.updateAll(Conditions, where);
   }
 
-  @get('/conditions/{id}', {
+  @get('/Conditions/{id}', {
     responses: {
       '200': {
-        description: 'conditions model instance',
-        content: {'application/json': {schema: getModelSchemaRef(conditions)}},
+        description: 'Conditions model instance',
+        content: {'application/json': {schema: getModelSchemaRef(Conditions)}},
       },
     },
   })
-  async findById(@param.path.string('id') id: string): Promise<conditions> {
-    return this.conditionsRepository.findById(id);
+  async findById(@param.path.string('id') id: string): Promise<Conditions> {
+    return this.ConditionsRepository.findById(id);
   }
 
-  @patch('/conditions/{id}', {
+  @patch('/Conditions/{id}', {
     responses: {
       '204': {
-        description: 'conditions PATCH success',
+        description: 'Conditions PATCH success',
       },
     },
   })
@@ -125,37 +125,37 @@ export class conditionsController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(conditions, {partial: true}),
+          schema: getModelSchemaRef(Conditions, {partial: true}),
         },
       },
     })
-    conditions: conditions,
+    Conditions: Conditions,
   ): Promise<void> {
-    await this.conditionsRepository.updateById(id, conditions);
+    await this.ConditionsRepository.updateById(id, Conditions);
   }
 
-  @put('/conditions/{id}', {
+  @put('/Conditions/{id}', {
     responses: {
       '204': {
-        description: 'conditions PUT success',
+        description: 'Conditions PUT success',
       },
     },
   })
   async replaceById(
     @param.path.string('id') id: string,
-    @requestBody() conditions: conditions,
+    @requestBody() Conditions: Conditions,
   ): Promise<void> {
-    await this.conditionsRepository.replaceById(id, conditions);
+    await this.ConditionsRepository.replaceById(id, Conditions);
   }
 
-  @del('/conditions/{id}', {
+  @del('/Conditions/{id}', {
     responses: {
       '204': {
-        description: 'conditions DELETE success',
+        description: 'Conditions DELETE success',
       },
     },
   })
   async deleteById(@param.path.string('id') id: string): Promise<void> {
-    await this.conditionsRepository.deleteById(id);
+    await this.ConditionsRepository.deleteById(id);
   }
 }

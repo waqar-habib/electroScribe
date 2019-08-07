@@ -25,7 +25,7 @@ class EditPatient extends Component {
     // Create a new method getPatientDetails to make an axios request to retrieve details of just ONE patient by pt_uuid
     getPatientDetails() {
         let pt_uuid = this.props.match.params.id;
-        axios.get(`http://[::1]:3000/patients/${pt_uuid}`)
+        axios.get(`http://[::1]:3000/Patients/${pt_uuid}`)
             .then(response => {
                 // Set state to the response that was fetched
                 this.setState({
@@ -47,7 +47,7 @@ class EditPatient extends Component {
         // Making a PUT request thru axios
         axios.request({
             method: 'PUT',
-            url: `http://[::1]:3000/patients/${this.state.pt_uuid}`,
+            url: `http://[::1]:3000/Patients/${this.state.pt_uuid}`,
             data: newPatient
         }).then(response => {
             // Redirecting to patients page
