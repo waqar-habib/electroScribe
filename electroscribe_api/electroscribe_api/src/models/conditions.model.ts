@@ -1,7 +1,7 @@
 import {Entity, model, property} from '@loopback/repository';
 
 @model({settings: {}})
-export class conditions extends Entity {
+export class Conditions extends Entity {
   @property({
     type: 'string',
     id: true,
@@ -16,13 +16,13 @@ export class conditions extends Entity {
   condition_name: string;
 
 
-  constructor(data?: Partial<conditions>) {
+  constructor(data?: Partial<Conditions>) {
     super(data);
   }
 }
 
-export interface conditionsRelations {
+export interface ConditionsRelations {
   // describe navigational properties here
 }
 
-export type conditionsWithRelations = conditions & conditionsRelations;
+export type ConditionsWithRelations = Conditions & ConditionsRelations;

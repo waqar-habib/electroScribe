@@ -1,16 +1,16 @@
 import {DefaultCrudRepository} from '@loopback/repository';
-import {drugs, drugsRelations} from '../models';
+import {Drugs, DrugsRelations} from '../models';
 import {MysqlDataSource} from '../datasources';
 import {inject} from '@loopback/core';
 
-export class drugsRepository extends DefaultCrudRepository<
-  drugs,
-  typeof drugs.prototype.drug_uuid,
-  drugsRelations
+export class DrugsRepository extends DefaultCrudRepository<
+  Drugs,
+  typeof Drugs.prototype.drug_uuid,
+  DrugsRelations
 > {
   constructor(
     @inject('datasources.mysql') dataSource: MysqlDataSource,
   ) {
-    super(drugs, dataSource);
+    super(Drugs, dataSource);
   }
 }

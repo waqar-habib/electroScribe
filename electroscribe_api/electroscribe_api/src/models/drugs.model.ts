@@ -1,7 +1,7 @@
 import {Entity, model, property} from '@loopback/repository';
 
 @model({settings: {}})
-export class drugs extends Entity {
+export class Drugs extends Entity {
   @property({
     type: 'string',
     id: true,
@@ -28,13 +28,13 @@ export class drugs extends Entity {
   icd_10: string;
 
 
-  constructor(data?: Partial<drugs>) {
+  constructor(data?: Partial<Drugs>) {
     super(data);
   }
 }
 
-export interface drugsRelations {
+export interface DrugsRelations {
   // describe navigational properties here
 }
 
-export type drugsWithRelations = drugs & drugsRelations;
+export type DrugsWithRelations = Drugs & DrugsRelations;

@@ -17,20 +17,20 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {providers} from '../models';
-import {providersRepository} from '../repositories';
+import {Providers} from '../models';
+import {ProvidersRepository} from '../repositories';
 
-export class providersController {
+export class ProvidersController {
   constructor(
-    @repository(providersRepository)
-    public providersRepository : providersRepository,
+    @repository(ProvidersRepository)
+    public ProvidersRepository : ProvidersRepository,
   ) {}
 
-  @post('/providers', {
+  @post('/Providers', {
     responses: {
       '200': {
-        description: 'providers model instance',
-        content: {'application/json': {schema: getModelSchemaRef(providers)}},
+        description: 'Providers model instance',
+        content: {'application/json': {schema: getModelSchemaRef(Providers)}},
       },
     },
   })
@@ -38,51 +38,51 @@ export class providersController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(providers, {exclude: ['provider_uuid']}),
+          schema: getModelSchemaRef(Providers, {exclude: ['provider_uuid']}),
         },
       },
     })
-    providers: Omit<providers, 'provider_uuid'>,
-  ): Promise<providers> {
-    return this.providersRepository.create(providers);
+    Providers: Omit<Providers, 'provider_uuid'>,
+  ): Promise<Providers> {
+    return this.ProvidersRepository.create(Providers);
   }
 
-  @get('/providers/count', {
+  @get('/Providers/count', {
     responses: {
       '200': {
-        description: 'providers model count',
+        description: 'Providers model count',
         content: {'application/json': {schema: CountSchema}},
       },
     },
   })
   async count(
-    @param.query.object('where', getWhereSchemaFor(providers)) where?: Where<providers>,
+    @param.query.object('where', getWhereSchemaFor(Providers)) where?: Where<Providers>,
   ): Promise<Count> {
-    return this.providersRepository.count(where);
+    return this.ProvidersRepository.count(where);
   }
 
-  @get('/providers', {
+  @get('/Providers', {
     responses: {
       '200': {
-        description: 'Array of providers model instances',
+        description: 'Array of Providers model instances',
         content: {
           'application/json': {
-            schema: {type: 'array', items: getModelSchemaRef(providers)},
+            schema: {type: 'array', items: getModelSchemaRef(Providers)},
           },
         },
       },
     },
   })
   async find(
-    @param.query.object('filter', getFilterSchemaFor(providers)) filter?: Filter<providers>,
-  ): Promise<providers[]> {
-    return this.providersRepository.find(filter);
+    @param.query.object('filter', getFilterSchemaFor(Providers)) filter?: Filter<Providers>,
+  ): Promise<Providers[]> {
+    return this.ProvidersRepository.find(filter);
   }
 
-  @patch('/providers', {
+  @patch('/Providers', {
     responses: {
       '200': {
-        description: 'providers PATCH success count',
+        description: 'Providers PATCH success count',
         content: {'application/json': {schema: CountSchema}},
       },
     },
@@ -91,32 +91,32 @@ export class providersController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(providers, {partial: true}),
+          schema: getModelSchemaRef(Providers, {partial: true}),
         },
       },
     })
-    providers: providers,
-    @param.query.object('where', getWhereSchemaFor(providers)) where?: Where<providers>,
+    Providers: Providers,
+    @param.query.object('where', getWhereSchemaFor(Providers)) where?: Where<Providers>,
   ): Promise<Count> {
-    return this.providersRepository.updateAll(providers, where);
+    return this.ProvidersRepository.updateAll(Providers, where);
   }
 
-  @get('/providers/{id}', {
+  @get('/Providers/{id}', {
     responses: {
       '200': {
-        description: 'providers model instance',
-        content: {'application/json': {schema: getModelSchemaRef(providers)}},
+        description: 'Providers model instance',
+        content: {'application/json': {schema: getModelSchemaRef(Providers)}},
       },
     },
   })
-  async findById(@param.path.string('id') id: string): Promise<providers> {
-    return this.providersRepository.findById(id);
+  async findById(@param.path.string('id') id: string): Promise<Providers> {
+    return this.ProvidersRepository.findById(id);
   }
 
-  @patch('/providers/{id}', {
+  @patch('/Providers/{id}', {
     responses: {
       '204': {
-        description: 'providers PATCH success',
+        description: 'Providers PATCH success',
       },
     },
   })
@@ -125,37 +125,37 @@ export class providersController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(providers, {partial: true}),
+          schema: getModelSchemaRef(Providers, {partial: true}),
         },
       },
     })
-    providers: providers,
+    Providers: Providers,
   ): Promise<void> {
-    await this.providersRepository.updateById(id, providers);
+    await this.ProvidersRepository.updateById(id, Providers);
   }
 
-  @put('/providers/{id}', {
+  @put('/Providers/{id}', {
     responses: {
       '204': {
-        description: 'providers PUT success',
+        description: 'Providers PUT success',
       },
     },
   })
   async replaceById(
     @param.path.string('id') id: string,
-    @requestBody() providers: providers,
+    @requestBody() Providers: Providers,
   ): Promise<void> {
-    await this.providersRepository.replaceById(id, providers);
+    await this.ProvidersRepository.replaceById(id, Providers);
   }
 
-  @del('/providers/{id}', {
+  @del('/Providers/{id}', {
     responses: {
       '204': {
-        description: 'providers DELETE success',
+        description: 'Providers DELETE success',
       },
     },
   })
   async deleteById(@param.path.string('id') id: string): Promise<void> {
-    await this.providersRepository.deleteById(id);
+    await this.ProvidersRepository.deleteById(id);
   }
 }

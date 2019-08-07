@@ -17,7 +17,7 @@ class PatientDetails extends Component {
     // Create a new method getPatient to make an axios request to retrieve details of just ONE patient by pt_uuid
     getPatient() {
         let pt_uuid = this.props.match.params.id;
-        axios.get(`http://[::1]:3000/patients/${pt_uuid}`)
+        axios.get(`http://[::1]:3000/Patients/${pt_uuid}`)
             .then(response => {
                 // Setting the patients state object to the response
                 this.setState({details: response.data}, () => {
@@ -30,7 +30,7 @@ class PatientDetails extends Component {
     // Creating a new onDelete method to execute when button in Ln 52 is clicked
     onDelete(){
         let pt_uuid = this.state.details.pt_uuid;
-        axios.delete(`http://[::1]:3000/patients/${pt_uuid}`)
+        axios.delete(`http://[::1]:3000/Patients/${pt_uuid}`)
             .then(response => {
                 this.props.history.push('/patients')
             }).catch(err => console.log(err))

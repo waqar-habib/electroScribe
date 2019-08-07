@@ -9,7 +9,7 @@ class AddPatient extends Component {
         // Making a POST request thru axios
         axios.request({
             method: 'POST',
-            url: 'http://[::1]:3000/patients/',
+            url: 'http://[::1]:3000/Patients/',
             data: newPatient
         }).then(response => {
             // Redirecting to patients page
