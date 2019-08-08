@@ -13,7 +13,7 @@ class DashContainer extends Component {
     // Render is a lifecyle method
     render() {
         return (
-            <div>
+            <div className="dash-container">
                 <p>Dash container.</p>
             </div>
         )
