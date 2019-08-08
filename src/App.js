@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Main from './components/Main';
-import Navbar from './components/Navbar';
+import Main from './components/Pages/Main';
+import Navbar from './components/Navbar/Navbar';
 
 const App = () => (
   <div>
