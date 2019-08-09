@@ -24,7 +24,7 @@ class Patients extends Component {
         axios.get('http://[::1]:3000/Patients')
             .then(response => {
                 // Setting the patients state object to the response
-                this.setState({patients: response.data}, () => {
+                this.setState({ patients: response.data }, () => {
                     console.log(this.state);
                 })
             })
@@ -35,7 +35,14 @@ class Patients extends Component {
     render() {
         return (
             <div>
-                <h1>Patients</h1>
+                <h1 style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>Patients</h1>
+                <div className="fixed-action-button">
+                    <Link to="/patients/add" className="btn-floating btn-large red">
+                        <i className="fa fa-plus"></i>
+                    </Link>
+                    <br />
+                    <br />
+                </div>
                 <table className="highlight">
                     <thead>
                         <tr>
@@ -50,7 +57,7 @@ class Patients extends Component {
                                 <tr key={i}>
                                     <td>
                                         <Link to={`/patients/${patient.pt_uuid}`}>
-                                        {patient.pt_name}</Link>
+                                            {patient.pt_name}</Link>
                                     </td>
                                     <td>{patient.pt_dob}</td>
                                     <td>{patient.pt_cell}</td>
@@ -60,11 +67,7 @@ class Patients extends Component {
                     </tbody>
                 </table>
 
-                <div className="fixed-action-button">
-                    <Link to="/patients/add" className="btn-floating btn-large red">
-                        <i className="fa fa-plus"></i>
-                    </Link>
-                </div>
+
             </div>
 
         )
