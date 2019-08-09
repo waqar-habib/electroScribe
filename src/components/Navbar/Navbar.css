@@ -1,0 +1,26 @@
+.homeButton{
+font-weight: bold;
+}
+.sidenav{
+
+width: 250px;
+background-image: url(https://thumbs.dreamstime.com/b/medical-background-animation-hd-39917580.jpg);
+background-size: 700px 700px;
+
+
+ 
+}
+
+.sideLinks{
+color:blue;
+  
+}
+.sideLinks:hover{
+    color: rgb(151, 151, 211);
+}
+.brand-logo {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+.social{
+    text-align: center;
+}
