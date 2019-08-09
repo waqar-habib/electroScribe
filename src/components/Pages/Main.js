@@ -5,6 +5,9 @@ import Home from './Home/Home';
 import PatientDetails from '../Patients/PatientDetails';
 import AddPatient from '../Patients/AddPatients';
 import EditPatient from '../Patients/EditPatient';
+import Dashboard from '../Dashboard/Dashboard';
+import Account from '../Account/Account';
+import MedRecords from '../MedicalRecords/Medical-records';
 
 
 const Main = () => (
