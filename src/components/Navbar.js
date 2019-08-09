@@ -16,7 +16,6 @@ class Navbar extends Component {
                         <li><Link to="/patients/"><i className="fa fa-users"></i> Patients</Link></li>
                         <li><Link to="/dashboard"><i className="fa fa-h-square"></i> Dashboard</Link></li>
                         <li><Link to="/account"><i className="fa fa-address-card"></i> Account</Link></li>
-                        <li><Link to="/messages"><i className="fa fa-envelope-o"></i> Messages</Link></li>
                         <li><Link to="/medical-records"><i className="fa fa-heartbeat"></i> Medical Records</Link></li> 
                     </ul>
                     </div>
