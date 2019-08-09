@@ -2,7 +2,7 @@
 font-weight: bold;
 }
 .sidenav{
-margin-top: 65px;
+
 width: 250px;
 background-image: url(https://thumbs.dreamstime.com/b/medical-background-animation-hd-39917580.jpg);
 background-size: 700px 700px;
@@ -20,4 +20,7 @@ color:blue;
 }
 .brand-logo {
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+.social{
+    text-align: center;
 }
