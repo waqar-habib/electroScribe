@@ -2,9 +2,18 @@ import React from 'react';
 import './Home.css';
 
 const Home = () => (
-  <div className="homePage">
-    <h1 style={{ textAlign: "center", fontFamily: 'fantasy', color: 'blue', fontWeight: 'bold', fontSize: '34px' }}>Welcome to electroScribe</h1>
-    <h4 style={{ textAlign: "center" }}>The Electronic Medical Record management app of the future!</h4>
+  <div>
+    <div className="homePage">
+      <h1 style={{ textAlign: "center", fontFamily: 'fantasy', color: 'blue', fontWeight: 'bold', fontSize: '34px' }}>Welcome to electroScribe</h1>
+      <h4 style={{ textAlign: "center" }}>The Electronic Medical Record management app of the future!</h4>
+    </div>
+    <div>
+      <h5>Mission Statement</h5>
+      <p></p>
+    </div>
+    <div>
+      <h6>Team</h6>
+    </div>
   </div>
 )
 

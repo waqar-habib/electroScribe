@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-//import DashContainer from './DashContainer';
-import PatientsContainer from './PatientsContainer';
-import MedsContainer from './MedsContainer';
-import AppContainer from './AppContainer';
+import MedsContainer from '../Pages/Container/MedsContainer';
+import AppContainer from '../Pages/Container/AppContainer';
 
 class Dashboard extends Component {
     constructor() {
@@ -22,7 +20,7 @@ class Dashboard extends Component {
                 <h1>Dashboard</h1>
                 <ul className="collection">
                     <div className="dash-containers">
-                        <PatientsContainer />
+
                         <MedsContainer />
                         <AppContainer />
                     </div>
