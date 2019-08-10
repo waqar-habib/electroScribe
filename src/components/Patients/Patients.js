@@ -21,7 +21,7 @@ class Patients extends Component {
 
     // Create a new method getPatients to make an axios request
     getPatients() {
-        axios.get('http://[::1]:3000/Patients')
+        axios.get('http://localhost:3000/api/patients')
             .then(response => {
                 // Setting the patients state object to the response
                 this.setState({ patients: response.data }, () => {
@@ -56,7 +56,7 @@ class Patients extends Component {
                             return (
                                 <tr key={i}>
                                     <td>
-                                        <Link to={`/patients/${patient.pt_uuid}`}>
+                                        <Link to={`/patients/${patient.id}`}>
                                             {patient.pt_name}</Link>
                                     </td>
                                     <td>{patient.pt_dob}</td>
