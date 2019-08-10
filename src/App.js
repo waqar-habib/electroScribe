@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Main from './components/Pages/Main';
+import Main from './components/pages/Main';
 import Navbar from './components/Navbar/Navbar';
 
 const App = () => (

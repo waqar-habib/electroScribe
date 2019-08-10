@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import MedsContainer from '../Pages/Container/MedsContainer';
-import AppContainer from '../Pages/Container/AppContainer';
+import MedsContainer from '../pages/Container/MedsContainer';
+import AppContainer from '../pages/Container/AppContainer';
 
 class Dashboard extends Component {
     constructor() {
