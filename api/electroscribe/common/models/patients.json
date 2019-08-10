@@ -1,0 +1,40 @@
+{
+  "name": "patients",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "pt_name": {
+      "type": "string",
+      "required": true
+    },
+    "pt_email": {
+      "type": "string",
+      "required": true
+    },
+    "pt_cell": {
+      "type": "string",
+      "required": true
+    },
+    "pt_gender": {
+      "type": "string",
+      "required": true
+    },
+    "pt_dob": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "conditions": {
+      "type": "hasMany",
+      "model": "conditions",
+      "foreignKey": "patientId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

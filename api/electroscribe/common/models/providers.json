@@ -1,0 +1,26 @@
+{
+  "name": "providers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "provider_name": {
+      "type": "string",
+      "required": true
+    },
+    "provider_email": {
+      "type": "string",
+      "required": true
+    },
+    "provider_speciality": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
