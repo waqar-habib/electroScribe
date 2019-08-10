@@ -9,7 +9,7 @@ class AddPatient extends Component {
         // Making a POST request thru axios
         axios.request({
             method: 'POST',
-            url: 'http://[::1]:3000/Patients/',
+            url: 'http://localhost:3000/api/patients',
             data: newPatient
         }).then(response => {
             // Redirecting to patients page
@@ -22,7 +22,6 @@ class AddPatient extends Component {
         //console.log(this.refs.name.value);
         // Making sure to create an array of object [{}] since this is the format the API accepts POST requests
         const newPatient = [{
-            pt_uuid: this.refs.pt_uuid.value,
             pt_name: this.refs.pt_name.value,
             pt_email: this.refs.pt_email.value,
             pt_cell: this.refs.pt_cell.value,
@@ -41,13 +40,6 @@ class AddPatient extends Component {
                 <Link className="btn grey" to="/patients">Back</Link>
                 <h1>Add Patient</h1>
                 <form className="col s12" onSubmit={this.onSubmit.bind(this)}>
-                    <div className="row">
-                        <div className="input-field col s12">
-                            <input name="pt_uuid" ref="pt_uuid" placeholder="1688546c-e060-4bb4-a5ba-bb1af8846f30" id="pt_uuid" type="text" className="validate" />
-                            <label style={{ color: "black", fontWeight: 'bold' }} className="active" htmlFor="pt_uuid">Patient ID</label>
-                            <span className="helper-text">Visit <a style={{ color: "black", fontWeight: 'bold' }} href='https://www.uuidgenerator.net/'>https://www.uuidgenerator.net/</a> to generate a unique patient ID number</span>
-                        </div>
-                    </div>
                     <div className="row">
                         <div className="input-field col s6">
                             <input name="pt_name" ref="pt_name" placeholder="John Doe" id="pt_name" type="text" className="validate" />

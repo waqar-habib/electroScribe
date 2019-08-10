@@ -14,10 +14,10 @@ class PatientDetails extends Component {
         this.getPatient();
     }
 
-    // Create a new method getPatient to make an axios request to retrieve details of just ONE patient by pt_uuid
+    // Create a new method getPatient to make an axios request to retrieve details of just ONE patient by id
     getPatient() {
-        let pt_uuid = this.props.match.params.id;
-        axios.get(`http://[::1]:3000/Patients/${pt_uuid}`)
+        let id = this.props.match.params.id;
+        axios.get(`http://localhost:3000/api/patients/${id}`)
             .then(response => {
                 // Setting the patients state object to the response
                 this.setState({details: response.data}, () => {
@@ -29,8 +29,8 @@ class PatientDetails extends Component {
 
     // Creating a new onDelete method to execute when button in Ln 52 is clicked
     onDelete(){
-        let pt_uuid = this.state.details.pt_uuid;
-        axios.delete(`http://[::1]:3000/Patients/${pt_uuid}`)
+        let id = this.state.details.id;
+        axios.delete(`http://localhost:3000/api/patients/${id}`)
             .then(response => {
                 this.props.history.push('/patients')
             }).catch(err => console.log(err))
@@ -56,7 +56,7 @@ class PatientDetails extends Component {
                         </div>
                         <div className="card-action">
                         <Link to="/chart">Chart</Link>
-                        <Link to={`/patients/edit/${this.state.details.pt_uuid}`}>Edit</Link>
+                        <Link to={`/patients/edit/${this.state.details.id}`}>Edit</Link>
                         {/*Ln 52: Adding an onClick prop to the button tag so we can bind the click to the click handler above*/}
                         <button onClick={this.onDelete.bind(this)} className="btn waves-effect waves-light red" type="delete" name="action">Delete
                         </button>

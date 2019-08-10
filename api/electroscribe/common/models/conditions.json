@@ -1,0 +1,23 @@
+{
+  "name": "conditions",
+  "plural": "y",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "icd_10": {
+      "type": "string",
+      "required": true
+    },
+    "condition_name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
