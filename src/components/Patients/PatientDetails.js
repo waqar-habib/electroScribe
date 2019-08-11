@@ -17,6 +17,7 @@ class PatientDetails extends Component {
     // Create a new method getPatient to make an axios request to retrieve details of just ONE patient by id
     getPatient() {
         let id = this.props.match.params.id;
+        console.log(id)
         axios.get(`http://localhost:3000/api/patients/${id}`)
             .then(response => {
                 // Setting the patients state object to the response
@@ -55,7 +56,7 @@ class PatientDetails extends Component {
                         <p>Cell: {this.state.details.pt_cell}</p>
                         </div>
                         <div className="card-action">
-                        <Link to="/chart">Chart</Link>
+                        <Link to={`/patients/${this.state.details.id}/conditions`}>Chart</Link>
                         <Link to={`/patients/edit/${this.state.details.id}`}>Edit</Link>
                         {/*Ln 52: Adding an onClick prop to the button tag so we can bind the click to the click handler above*/}
                         <button onClick={this.onDelete.bind(this)} className="btn waves-effect waves-light red" type="delete" name="action">Delete

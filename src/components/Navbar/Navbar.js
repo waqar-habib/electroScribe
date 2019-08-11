@@ -22,9 +22,7 @@ class Navbar extends Component {
 
                         <li className="sideLinks"><Link to="/dashboard"><i className="fa fa-h-square"></i> Dashboard</Link></li>
                         <li className="sideLinks"><Link to="/patients/"><i className="fa fa-users"></i> Patients</Link></li>
-                        <li className="sideLinks"><Link to="/account"><i className="fa fa-address-card"></i> Account</Link></li>
-                        <li className="sideLinks"><Link to="/messages"><i className="fa fa-envelope"></i> Messages</Link></li>
-                        <li className="sideLinks"><Link to="/medical-records"><i className="fa fa-heartbeat"></i> Medical Records</Link></li>
+                        <li className="sideLinks"><Link to="/chart"><i className="fa fa-heartbeat"></i>Medical Records</Link></li>
                     </ul>
                 </div>
 
