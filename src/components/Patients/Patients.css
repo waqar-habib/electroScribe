@@ -1,4 +1,11 @@
+body{
+    background-color: rgb(231, 224, 212);
+}
 ::placeholder{
     color: rgb(175, 146, 146);
     font-size: 12px;
+}
+#patientsBody{
+    background-image: url(https://images.pexels.com/photos/42230/teddy-teddy-bear-association-ill-42230.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+    background-size: cover;
 }
