@@ -33,6 +33,11 @@
       "type": "hasMany",
       "model": "conditions",
       "foreignKey": "patientId"
+    },
+    "drugs": {
+      "type": "hasMany",
+      "model": "drugs",
+      "foreignKey": "patientId"
     }
   },
   "acls": [],
