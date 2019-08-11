@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Accident from '../Pages/Views/Videos/Accident.jpg'
+
 //import moment from'moment';
 
 class Patients extends Component {
@@ -36,43 +36,46 @@ class Patients extends Component {
     render() {
         return (
             <div id="patientsBody">
-
                 <div>
-                    <h1 style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>Patients</h1>
-                    <div className="fixed-action-button">
-                        <Link to="/patients/add" className="btn-floating btn-large red">
-                            <i className="fa fa-plus"></i>
-                        </Link>
-                        <br />
-                        <br />
+
+
+                    <div>
+                        <h1 style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>Patients</h1>
+                        <div className="fixed-action-button">
+                            <Link to="/patients/add" className="btn-floating btn-large red">
+                                <i className="fa fa-plus"></i>
+                            </Link>
+                            <br />
+                            <br />
+                        </div>
+                        <table className="highlight">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Date of Birth</th>
+                                    <th>Cell Number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.state.patients.map((patient, i) => {
+                                    return (
+                                        <tr key={i}>
+                                            <td>
+                                                <Link to={`/patients/${patient.id}`}>
+                                                    {patient.pt_name}</Link>
+                                            </td>
+                                            <td>{patient.pt_dob}</td>
+                                            <td>{patient.pt_cell}</td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                        </table>
+
                     </div>
-                    <table className="highlight">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Date of Birth</th>
-                                <th>Cell Number</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.state.patients.map((patient, i) => {
-                                return (
-                                    <tr key={i}>
-                                        <td>
-                                            <Link to={`/patients/${patient.id}`}>
-                                                {patient.pt_name}</Link>
-                                        </td>
-                                        <td>{patient.pt_dob}</td>
-                                        <td>{patient.pt_cell}</td>
-                                    </tr>
-                                )
-                            })}
-                        </tbody>
-                    </table>
+                </div >
 
-                </div>
             </div >
-
         )
     }
 }
