@@ -31,47 +31,43 @@ class Patients extends Component {
     // Render is a lifecyle method
     render() {
         return (
-            <div id="patientsBody">
-                <div>
-
-
-                    <div>
-                        <h1 style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>Patients</h1>
-                        <div className="fixed-action-button">
-                            <Link to="/patients/add" className="btn-floating btn-large red">
-                                <i className="fa fa-plus"></i>
-                            </Link>
-                            <br />
-                            <br />
-                        </div>
-                        <table className="highlight">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Date of Birth</th>
-                                    <th>Cell Number</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {this.state.patients.map((patient, i) => {
-                                    return (
-                                        <tr key={i}>
-                                            <td>
-                                                <Link to={`/patients/${patient.id}`}>
-                                                    {patient.pt_name}</Link>
-                                            </td>
-                                            <td>{patient.pt_dob}</td>
-                                            <td>{patient.pt_cell}</td>
-                                        </tr>
-                                    )
-                                })}
-                            </tbody>
-                        </table>
-
-                    </div>
-                </div >
-
-            </div >
+            <div>
+                <br />
+                <br />
+                <h1>Current Patients</h1>
+                <br />
+                    <Link to="/patients/add" className="btn waves-effect waves-light">Add New Patient
+                    </Link>
+                    <br />
+                    <br />
+                    <p>Click on a patient name to see their medical record</p>
+                    <table className="highlight">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Date of Birth</th>
+                                <th>Cell Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.state.patients.map((patient, i) => {
+                                return (
+                                    <tr key={i}>
+                                        <td>
+                                            <Link to={`/patients/${patient.id}`}>{patient.pt_name}</Link>
+                                        </td>
+                                        <td>{patient.pt_dob}</td>
+                                        <td>{patient.pt_cell}</td>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </table>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+            </div>
         )
     }
 }

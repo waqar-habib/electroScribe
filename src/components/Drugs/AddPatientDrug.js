@@ -6,7 +6,6 @@ class AddPatientDrug extends Component {
     // Creating an addPatient method to take in the newPatient object w/ the form data
     addPatientDrug(newPatientDrug) {
         let id = this.props.match.params.id;
-        console.log(id)
         // Making a POST request thru axios
         axios.request({
             method: 'POST',
@@ -35,8 +34,13 @@ class AddPatientDrug extends Component {
         return (
             <div>
                 <br />
+                <br />
                 <Link className="btn grey" to="/patients">Back</Link>
-                <h1>Add Drugs for Patient</h1>
+                <br />
+                <br />
+                <h1>Add Drugs to Patient Record</h1>
+                <br />
+                <br />
                 <form className="col s12" onSubmit={this.onSubmit.bind(this)}>
                     <div className="row">
                         <div className="input-field col s6">
@@ -46,10 +50,11 @@ class AddPatientDrug extends Component {
                         <div className="input-field col s6">
                             <input name="patientId" ref="patientId" placeholder="1" id="patientId" type="text" className="validate" />
                             <label style={{ color: "black", fontWeight: 'bold' }} className="active" htmlFor="patientId">Patient ID</label>
+                            <span className="helper-text">Patient ID must match the number in the URL</span>                            
                         </div>
                     </div>
                     <div className="row">
-                        <button className="btn waves-effect waves-light" type="submit" value="Save" name="action">Add Patient Drug</button>
+                        <button className="btn waves-effect waves-light" type="submit" value="Save" name="action">Submit</button>
                     </div>
                 </form>
             </div>

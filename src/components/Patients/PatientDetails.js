@@ -40,18 +40,21 @@ class PatientDetails extends Component {
             <div>
                 <div>
                     <br />
+                    <br />
                     <Link className="btn grey" to="/patients">Back</Link>
                     <br />
-                    <h1>Details for {this.state.details.pt_name}</h1>
+                    <br />
+                    <h1><b>{this.state.details.pt_name}'s</b> Medical Record</h1>
+                    <br />
                 </div>
                 <div className="row">
                     <div className="col s12 m6">
                     <div className="card blue-grey darken-1">
                         <div className="card-content white-text">
-                        <p>Gender: {this.state.details.pt_gender}</p>
-                        <p>Date of Birth: {this.state.details.pt_dob}</p>
-                        <p>Email: {this.state.details.pt_email}</p>
-                        <p>Cell: {this.state.details.pt_cell}</p>
+                        <p><b>Gender:</b> {this.state.details.pt_gender}</p>
+                        <p><b>Date of Birth:</b> {this.state.details.pt_dob}</p>
+                        <p><b>Email:</b> {this.state.details.pt_email}</p>
+                        <p><b>Cell:</b> {this.state.details.pt_cell}</p>
                         </div>
                         <div className="card-action">
                         <Link to={`/patients/${this.state.details.id}/conditions`}>Conditions</Link>
@@ -65,15 +68,17 @@ class PatientDetails extends Component {
                 </div>
                 <div className="row">
                     <div className="col s12 m6">
+                        <p>Click below to prescribe drugs to <b>{this.state.details.pt_name}</b></p>
                         <button className="btn waves-effect waves-light">
-                            <Link to={`/patients/${this.state.details.id}/drugs/add`}>Add Drug</Link>
+                            <Link to={`/patients/${this.state.details.id}/drugs/add`}>Prescribe New Drug</Link>
                         </button>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col s12 m6">
+                        <p>Click below to new conditions to <b>{this.state.details.pt_name}'s</b> medical record</p>
                         <button className="btn waves-effect waves-light">
-                            <Link to={`/patients/${this.state.details.id}/conditions/add`}>Add Condition</Link>
+                            <Link to={`/patients/${this.state.details.id}/conditions/add`}>Add New Condition</Link>
                         </button>                        
                     </div> 
                 </div>                
