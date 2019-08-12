@@ -37,8 +37,13 @@ class AddPatient extends Component {
         return (
             <div>
                 <br />
+                <br />
+                <br />
                 <Link className="btn grey" to="/patients">Back</Link>
+                <br />
+                <br />
                 <h1>Add Patient</h1>
+                <p>Fill out the form below to add a new patient to the database</p>
                 <form className="col s12" onSubmit={this.onSubmit.bind(this)}>
                     <div className="row">
                         <div className="input-field col s6">
@@ -71,7 +76,7 @@ class AddPatient extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <button className="btn waves-effect waves-light" type="submit" value="Save" name="action">Add Patient</button>
+                        <button className="btn waves-effect waves-light" type="submit" value="Save" name="action">Submit Patient Info</button>
                     </div>
                 </form>
             </div>
