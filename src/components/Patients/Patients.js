@@ -23,9 +23,7 @@ class Patients extends Component {
         axios.get('http://localhost:3000/api/patients')
             .then(response => {
                 // Setting the patients state object to the response
-                this.setState({ patients: response.data }, () => {
-                    console.log(this.state);
-                })
+                this.setState({ patients: response.data }, () => {})
             })
             .catch(err => console.log(err))
     }
