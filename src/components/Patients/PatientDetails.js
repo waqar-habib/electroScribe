@@ -17,12 +17,10 @@ class PatientDetails extends Component {
     // Create a new method getPatient to make an axios request to retrieve details of just ONE patient by id
     getPatient() {
         let id = this.props.match.params.id;
-        console.log(id)
         axios.get(`http://localhost:3000/api/patients/${id}`)
             .then(response => {
                 // Setting the patients state object to the response
                 this.setState({details: response.data}, () => {
-                    //console.log(this.state);
                 })
             })
             .catch(err => console.log(err))
@@ -43,27 +41,41 @@ class PatientDetails extends Component {
                 <div>
                     <br />
                     <Link className="btn grey" to="/patients">Back</Link>
-                    <h1>Patient Details</h1>
+                    <br />
+                    <h1>Details for {this.state.details.pt_name}</h1>
                 </div>
                 <div className="row">
                     <div className="col s12 m6">
                     <div className="card blue-grey darken-1">
                         <div className="card-content white-text">
-                        <span className="card-title">{this.state.details.pt_name}</span>
                         <p>Gender: {this.state.details.pt_gender}</p>
                         <p>Date of Birth: {this.state.details.pt_dob}</p>
                         <p>Email: {this.state.details.pt_email}</p>
                         <p>Cell: {this.state.details.pt_cell}</p>
                         </div>
                         <div className="card-action">
-                        <Link to={`/patients/${this.state.details.id}/conditions`}>Chart</Link>
-                        <Link to={`/patients/edit/${this.state.details.id}`}>Edit</Link>
+                        <Link to={`/patients/${this.state.details.id}/conditions`}>Conditions</Link>
+                        <Link to={`/patients/${this.state.details.id}/drugs`}>Drugs</Link>
                         {/*Ln 52: Adding an onClick prop to the button tag so we can bind the click to the click handler above*/}
                         <button onClick={this.onDelete.bind(this)} className="btn waves-effect waves-light red" type="delete" name="action">Delete
                         </button>
                         </div>
                     </div>
                     </div>
+                </div>
+                <div className="row">
+                    <div className="col s12 m6">
+                        <button className="btn waves-effect waves-light">
+                            <Link to={`/patients/${this.state.details.id}/drugs/add`}>Add Drug</Link>
+                        </button>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col s12 m6">
+                        <button className="btn waves-effect waves-light">
+                            <Link to={`/patients/${this.state.details.id}/conditions/add`}>Add Condition</Link>
+                        </button>                        
+                    </div> 
                 </div>                
             </div>
         )
