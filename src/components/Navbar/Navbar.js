@@ -21,14 +21,14 @@ class Navbar extends Component {
                             </Link>
                         </li>
                         <br />
-                        <li className="sideLinks">
+                        {/* <li className="sideLinks">
                             <Link to="/dashboard">
                                 <i className="fa fa-h-square"></i>Dashboard
                             </Link>
-                        </li>
+                        </li> */}
                         <li className="sideLinks">
                             <Link to="/patients/">
-                                <i className="fa fa-users"></i>Patient Database
+                                <i className="fa fa-users"></i>Patient Portal
                             </Link>
                         </li>
                         {/* <li className="sideLinks">
