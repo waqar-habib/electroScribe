@@ -6,14 +6,19 @@ import PatientDetails from '../Patients/PatientDetails';
 import AddPatient from '../Patients/AddPatients';
 import EditPatient from '../Patients/EditPatient';
 import ConditionItem from '../Conditions/ConditionItem';
-import DrugItem from '../Drugs/DrugItem'; 
+import DrugItem from '../Drugs/DrugItem';
 import AddPatientDrug from '../Drugs/AddPatientDrug';
 import AddPatientCondition from '../Conditions/AddPatientCondition';
+import Login from "../Login/login";
+import Dashboard from '../Dashboard/dashboard'
+
 
 const Main = () => (
     <main>
         <Switch>
             <Route exact path='/' component={Home} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/dashboard" exact component={Dashboard} />
             <Route exact path='/patients' component={Patients} />
             <Route exact path='/patients/add' component={AddPatient} />
             <Route exact path='/patients/edit/:id' component={EditPatient} />

@@ -23,7 +23,7 @@ class Patients extends Component {
         axios.get('http://localhost:3000/api/patients')
             .then(response => {
                 // Setting the patients state object to the response
-                this.setState({ patients: response.data }, () => {})
+                this.setState({ patients: response.data }, () => { })
             })
             .catch(err => console.log(err))
     }
@@ -36,37 +36,37 @@ class Patients extends Component {
                 <br />
                 <h1>Current Patients</h1>
                 <br />
-                    <Link to="/patients/add" className="btn waves-effect waves-light">Add New Patient
+                <Link to="/patients/add" className="btn waves-effect waves-light">Add New Patient
                     </Link>
-                    <br />
-                    <br />
-                    <p>Click on a patient name to see their medical record</p>
-                    <table className="highlight">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Date of Birth</th>
-                                <th>Cell Number</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.state.patients.map((patient, i) => {
-                                return (
-                                    <tr key={i}>
-                                        <td>
-                                            <Link to={`/patients/${patient.id}`}>{patient.pt_name}</Link>
-                                        </td>
-                                        <td>{patient.pt_dob}</td>
-                                        <td>{patient.pt_cell}</td>
-                                    </tr>
-                                )
-                            })}
-                        </tbody>
-                    </table>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                <br />
+                <br />
+                <p>Click on a patient name to see their medical record</p>
+                <table className="highlight">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date of Birth</th>
+                            <th>Cell Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.patients.map((patient, i) => {
+                            return (
+                                <tr key={i}>
+                                    <td>
+                                        <Link to={`/patients/${patient.id}`}>{patient.pt_name}</Link>
+                                    </td>
+                                    <td>{patient.pt_dob}</td>
+                                    <td>{patient.pt_cell}</td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
+                <br />
+                <br />
+                <br />
+                <br />
             </div>
         )
     }
