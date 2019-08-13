@@ -6,7 +6,7 @@ class Navbar extends Component {
     render() {
         return (
             <div>
-                <nav className="blue lighter-3">
+                <nav className="indigo darken-4">
                     <div className="nav-wrapper">
                         <a href="/" className="brand-logo center">electroScribe</a>
                         <a data-target="main-menu" className="sidenav-trigger show-on-large">
