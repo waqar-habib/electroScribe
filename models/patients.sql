@@ -7,6 +7,6 @@ CREATE TABLE IF NOT EXISTS patients (
     pt_email VARCHAR(50),
     pt_cell VARCHAR(12),
     pt_gender VARCHAR(6),
-    pt_dob DATETIME
+    pt_dob VARCHAR(10)
 );
 

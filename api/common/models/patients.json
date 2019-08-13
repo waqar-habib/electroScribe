@@ -23,7 +23,7 @@
       "required": true
     },
     "pt_dob": {
-      "type": "date",
+      "type": "string",
       "required": true
     }
   },
